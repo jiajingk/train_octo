@@ -35,4 +35,5 @@ RUN pip3 install --upgrade "jax[cuda11_pip]==0.4.20" -f https://storage.googleap
 COPY minimal_inference.py .
 
 # Set the entrypoint to run the script
-ENTRYPOINT ["python3", "minimal_inference.py"]
+ENTRYPOINT ["python3", "scripts/finetune.py", "--config.pretrained_path=hf://rail-berkeley/octo-small-1.5", "--config.batch_size=32", "--config.num_steps=5000"]
+
